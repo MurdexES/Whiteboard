@@ -5,10 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
+using Whiteboard.Services.Classes;
+using Whiteboard.Services.Interfaces;
 using Whiteboard.View;
 using Whiteboard.ViewModel;
 
@@ -31,7 +34,13 @@ namespace Whiteboard
         {
             Container.RegisterSingleton<IMessenger, Messenger>();
 
+            Container.RegisterSingleton<IMyNavigationSevice, MyNavigationService>();
+
             Container.RegisterSingleton<MainViewModel>();
+            Container.RegisterSingleton<LoginViewModel>();
+            Container.RegisterSingleton<RegisterViewModel>();
+            Container.RegisterSingleton<HomeViewModel>();
+            Container.RegisterSingleton < WhiteboardViewModel>();
         }
 
         private void MainStartup()

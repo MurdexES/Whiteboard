@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\App.xaml
-1348297793
+5-2038307878
 
-3-1124699155
+12-560279606
 234570266476
-View\MainView.xaml;
+View\HomeView.xaml;View\LoginView.xaml;View\MainView.xaml;View\RegisterView.xaml;View\WhiteboardView.xaml;
 
 False
 
