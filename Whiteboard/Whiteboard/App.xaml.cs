@@ -26,7 +26,7 @@ namespace Whiteboard
 
         protected override void OnStartup(StartupEventArgs e)
         {
-
+            Register();
             MainStartup();
         }
 
@@ -34,13 +34,15 @@ namespace Whiteboard
         {
             Container.RegisterSingleton<IMessenger, Messenger>();
 
-            Container.RegisterSingleton<IMyNavigationSevice, MyNavigationService>();
+            Container.RegisterSingleton<ISerializeService, SerializeService>();
+            Container.RegisterSingleton<IMyNavigationService, MyNavigationService>();
+            Container.RegisterSingleton<IUserManageService, UserManageService>();
 
             Container.RegisterSingleton<MainViewModel>();
             Container.RegisterSingleton<LoginViewModel>();
             Container.RegisterSingleton<RegisterViewModel>();
             Container.RegisterSingleton<HomeViewModel>();
-            Container.RegisterSingleton < WhiteboardViewModel>();
+            Container.RegisterSingleton<WhiteboardViewModel>();
         }
 
         private void MainStartup()

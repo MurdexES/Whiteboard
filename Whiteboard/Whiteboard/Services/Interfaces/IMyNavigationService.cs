@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Whiteboard.Services.Interfaces
 {
-    public interface IMyNavigationSevice
+    public interface IMyNavigationService
     {
         public void NavigateTo<T>(object? data = null) where T : ViewModelBase;
     }

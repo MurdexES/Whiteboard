@@ -10,7 +10,7 @@ using Whiteboard.Services.Messages;
 
 namespace Whiteboard.Services.Classes
 {
-    internal class MyNavigationService : IMyNavigationSevice
+    internal class MyNavigationService : IMyNavigationService
     {
         private readonly IMessenger _messenger;
 

@@ -82,3 +82,6 @@ Q:\Projects\Whiteboard\Whiteboard\Whiteboard\obj\Debug\net7.0-windows\View\HomeV
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\obj\Debug\net7.0-windows\View\LoginView.baml
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\obj\Debug\net7.0-windows\View\RegisterView.baml
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\obj\Debug\net7.0-windows\View\WhiteboardView.baml
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\user.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\obj\Debug\net7.0-windows\Whiteboard_Content.g.cs
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\whiteboard.png

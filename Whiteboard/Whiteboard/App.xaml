@@ -19,7 +19,7 @@
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type ViewModel:RegisterViewModel}">
-            <View:RegisterView></View:Ref>
+            <View:RegisterView></View:RegisterView>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type ViewModel:WhiteboardViewModel}">

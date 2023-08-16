@@ -30,9 +30,7 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
-using Whiteboard;
 using Whiteboard.View;
-using Whiteboard.ViewModel;
 
 
 namespace Whiteboard.View {
@@ -55,7 +53,7 @@ namespace Whiteboard.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Whiteboard;V1.0.0.0;component/view/homeview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Whiteboard;component/view/homeview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\HomeView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
