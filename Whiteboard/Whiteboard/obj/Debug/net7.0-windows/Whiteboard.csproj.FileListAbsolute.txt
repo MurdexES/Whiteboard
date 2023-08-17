@@ -90,3 +90,8 @@ Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Asset
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\line.png
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\pencil.png
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\rectangle.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\download.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\email.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\open-box.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\open-folder.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\printer.png

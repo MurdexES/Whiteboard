@@ -8,6 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/menu/download.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/menu/email.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/menu/open-box.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/menu/open-folder.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/menu/printer.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/ellipse.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/eraser.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/line.png")]
