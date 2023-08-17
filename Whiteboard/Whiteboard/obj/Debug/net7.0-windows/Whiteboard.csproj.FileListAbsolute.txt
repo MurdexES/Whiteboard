@@ -85,3 +85,8 @@ Q:\Projects\Whiteboard\Whiteboard\Whiteboard\obj\Debug\net7.0-windows\View\White
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\user.png
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\obj\Debug\net7.0-windows\Whiteboard_Content.g.cs
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\whiteboard.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\ellipse.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\eraser.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\line.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\pencil.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Tools\rectangle.png

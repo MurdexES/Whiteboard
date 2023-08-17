@@ -5,8 +5,49 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Whiteboard.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="1150">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" CornerRadius="4" BorderThickness="10" BorderBrush="SlateGray" Background="#edc202" Margin="10">
+
+            <StackPanel Orientation="Horizontal" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <Button x:Name="colorBtn" Width="50" Height="50" Margin="10"  BorderBrush="Black" BorderThickness="2" Background="Transparent"/>
+
+                    <Button x:Name="PencilBtn" Margin="10" Background="Transparent" BorderBrush="Transparent" Click="PencilBtn_Click">
+                        <Image Source="Assets\Tools\pencil.png"/>
+                    </Button>
+
+                    <Button x:Name="EraserBtn" Margin="10" Background="Transparent" BorderBrush="Transparent" Click="EraserBtn_Click">
+                        <Image Source="Assets\Tools\eraser.png"/>
+                    </Button>
+
+                    <Button x:Name="EllipseBtn" Margin="10" Background="Transparent" BorderBrush="Transparent" Click="EllipseBtn_Click">
+                        <Image Source="Assets\Tools\ellipse.png"/>
+                    </Button>
+
+                    <Button x:Name="RectangleBtn" Margin="10" Background="Transparent" BorderBrush="Transparent" Click="RectangleBtn_Click">
+                        <Image Source="Assets\Tools\rectangle.png"/>
+                    </Button>
+
+                    <Button x:Name="LineBtn" Margin="10" Background="Transparent" BorderBrush="Transparent" Click="LineBtn_Click">
+                        <Image Source="Assets\Tools\line.png"/>
+                    </Button>
+                </StackPanel>
+
+                <ComboBox x:Name="ColorPicker" Margin="500 10 10 10"/>
+            </StackPanel>
+
+        </Border>
+
+        <Canvas x:Name="Pic" Grid.Row="1" Margin="10" MouseDown="Pic_MouseDown" MouseMove="Pic_MouseMove" MouseUp="Pic_MouseUp" Background="White">
+
+        </Canvas>
+
     </Grid>
 </UserControl>

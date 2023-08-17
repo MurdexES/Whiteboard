@@ -34,9 +34,21 @@ namespace Whiteboard.ViewModel
             using FileStream fs = new("remember.json", FileMode.OpenOrCreate, FileAccess.Read);
             using StreamReader sr = new StreamReader(fs);
 
-            bool isRemember = JsonSerializer.Deserialize<bool>(sr.ReadToEnd());
-
-            return isRemember;
+            if (sr.ReadToEnd() == string.Empty)
+            {
+                return false;
+            }
+            else
+            {
+                if (JsonSerializer.Deserialize<bool>(sr.ReadToEnd()) == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         public void ReceiveMessage(NavigationMessage message)
@@ -52,7 +64,7 @@ namespace Whiteboard.ViewModel
             }
             else
             {
-                CurrentViewModel = App.Container.GetInstance<LoginViewModel>();
+                CurrentViewModel = App.Container.GetInstance<WhiteboardViewModel>();
             }
 
             _messenger = messenger;

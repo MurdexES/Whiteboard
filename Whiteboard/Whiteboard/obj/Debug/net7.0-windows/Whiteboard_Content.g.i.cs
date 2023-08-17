@@ -8,7 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/ellipse.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/eraser.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/line.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/pencil.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/user.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/whiteboard.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/assets/tools/rectangle.png")]
 
 
