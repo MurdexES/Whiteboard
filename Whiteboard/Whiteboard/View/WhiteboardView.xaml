@@ -16,8 +16,7 @@
 
             <StackPanel Orientation="Horizontal" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-                    <Button x:Name="colorBtn" Width="50" Height="50" Margin="10"  BorderBrush="Black" BorderThickness="2" Background="Transparent"/>
+                    <Button x:Name="ColorBtn" Width="50" Height="50" Margin="10"  BorderBrush="Black" BorderThickness="2" Background="Black"/>
 
                     <Button x:Name="PencilBtn" Margin="10" Background="Transparent" BorderBrush="Transparent" Click="PencilBtn_Click">
                         <Image Source="Assets\Tools\pencil.png"/>
@@ -40,12 +39,33 @@
                     </Button>
                 </StackPanel>
 
-                <ComboBox x:Name="ColorPicker" Margin="500 10 10 10"/>
+                <ComboBox x:Name="ColorPicker" Margin="400 10 10 10" Width="150" Height="30" FontSize="15" FontWeight="DemiBold" SelectionChanged="ColorPicker_SelectionChanged">
+                    <ComboBoxItem Background="Red" Content="Red"/>
+                    <ComboBoxItem Background="Green" Content="Green"/>
+                    <ComboBoxItem Background="Blue" Content="Blue"/>
+                    <ComboBoxItem Background="Black" Content="Black" IsSelected="True" Foreground="White"/>
+                    <ComboBoxItem Background="Gray" Content="Gray"/>
+                    <ComboBoxItem Background="Yellow" Content="Yellow"/>
+                    <ComboBoxItem Background="Orange" Content="Orange"/>
+                    <ComboBoxItem Background="Purple" Content="Purple"/>
+                </ComboBox>
+                
+                <ComboBox x:Name="ThicknessPicker" Margin="10" Width="50" Height="30" FontSize="18" FontWeight="DemiBold" SelectionChanged="ThicknessPicker_SelectionChanged">
+                    <ComboBoxItem Content="2" IsSelected="True"/>
+                    <ComboBoxItem Content="4" />
+                    <ComboBoxItem Content="6"/>
+                    <ComboBoxItem Content="8"/>
+                    <ComboBoxItem Content="10"/>
+                    <ComboBoxItem Content="12"/>
+                    <ComboBoxItem Content="14"/>
+                    <ComboBoxItem Content="16"/>
+                    <ComboBoxItem Content="18"/>
+                </ComboBox>
             </StackPanel>
 
         </Border>
 
-        <Canvas x:Name="Pic" Grid.Row="1" Margin="10" MouseDown="Pic_MouseDown" MouseMove="Pic_MouseMove" MouseUp="Pic_MouseUp" Background="White">
+        <Canvas x:Name="Pic" Grid.Row="1" MouseDown="Pic_MouseDown" MouseMove="Pic_MouseMove" MouseUp="Pic_MouseUp" Background="White">
 
         </Canvas>
 

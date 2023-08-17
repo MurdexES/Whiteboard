@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\Assets\Menu\download.png" />
+    <None Remove="View\Assets\Menu\email.png" />
+    <None Remove="View\Assets\Menu\open-box.png" />
+    <None Remove="View\Assets\Menu\open-folder.png" />
+    <None Remove="View\Assets\Menu\printer.png" />
     <None Remove="View\Assets\Tools\ellipse.png" />
     <None Remove="View\Assets\Tools\eraser.png" />
     <None Remove="View\Assets\Tools\line.png" />
@@ -18,6 +23,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="View\Assets\Menu\download.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\Menu\email.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\Menu\open-box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\Menu\open-folder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\Menu\printer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="View\Assets\Tools\ellipse.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

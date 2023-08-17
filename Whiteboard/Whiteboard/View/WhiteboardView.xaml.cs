@@ -22,17 +22,25 @@ namespace Whiteboard.View
     /// </summary>
     public partial class WhiteboardView : UserControl
     {
-        private enum DrawingTool { None, Rectangle, Ellipse, Line, Pen, Eraser}
+        private enum DrawingTool { None, Rectangle, Ellipse, Line}
         private DrawingTool currentTool = DrawingTool.None;
+        
         private Point startPoint;
+        
         private Shape drawingShape;
-        private Brush pen = Brushes.Black;
-        private double penThickness = 2;
+        private Polyline freeLine;
+
+        private bool isWriting = false;
+        private bool isErasing = false;
+        
+        private Brush currentColor = Brushes.Black; 
+        private Brush pen;
+        private Brush eraser = Brushes.White;
+        private double penThickness = 3;
 
         public WhiteboardView()
         {
             InitializeComponent();
-            
         }
 
         private void SetDrawingTool(DrawingTool tool)
@@ -51,8 +59,8 @@ namespace Whiteboard.View
                     case DrawingTool.Rectangle:
                         drawingShape = new Rectangle
                         {
-                            Stroke = Brushes.Black,
-                            StrokeThickness = 2,
+                            Stroke = currentColor,
+                            StrokeThickness = penThickness,
                             Fill = Brushes.Transparent
                         };
 
@@ -64,8 +72,8 @@ namespace Whiteboard.View
                     case DrawingTool.Ellipse:
                         drawingShape = new Ellipse
                         {
-                            Stroke = Brushes.Black,
-                            StrokeThickness = 2,
+                            Stroke = currentColor,
+                            StrokeThickness = penThickness,
                             Fill = Brushes.Transparent
                         };
 
@@ -79,14 +87,25 @@ namespace Whiteboard.View
                         {
                             X1 = startPoint.X,
                             Y1 = startPoint.Y,
-                            Stroke = Brushes.Black,
-                            StrokeThickness = 2
+                            Stroke = currentColor,
+                            StrokeThickness = penThickness
                         };
+
                         break;
                 }
 
                 Pic.Children.Add(drawingShape);
             }
+            else if (e.ButtonState == MouseButtonState.Pressed && isWriting == true)
+            {
+                startPoint = e.GetPosition(Pic);
+            }
+            else if (e.ButtonState == MouseButtonState.Pressed && isErasing == true)
+            {
+                startPoint = e.GetPosition(Pic);
+            }
+
+                
         }
 
         private void Pic_MouseMove(object sender, MouseEventArgs e)
@@ -112,7 +131,37 @@ namespace Whiteboard.View
                         drawingShape.Width = width;
                         drawingShape.Height = height;
                     }
-                }     
+                }
+            }
+            else if (e.LeftButton == MouseButtonState.Pressed && isWriting == true)
+            {
+                Line line = new Line();
+
+                line.Stroke = pen;
+                line.X1 = startPoint.X;
+                line.Y1 = startPoint.Y;
+                line.X2 = e.GetPosition(Pic).X;
+                line.Y2 = e.GetPosition(Pic).Y;
+                line.StrokeThickness = penThickness;
+
+                startPoint = e.GetPosition(Pic);
+
+                Pic.Children.Add(line);
+            }
+            else if (e.LeftButton == MouseButtonState.Pressed && isErasing == true)
+            {
+                Line line = new Line();
+
+                line.Stroke = eraser;
+                line.X1 = startPoint.X;
+                line.Y1 = startPoint.Y;
+                line.X2 = e.GetPosition(Pic).X;
+                line.Y2 = e.GetPosition(Pic).Y;
+                line.StrokeThickness = penThickness;
+
+                startPoint = e.GetPosition(Pic);
+
+                Pic.Children.Add(line);
             }
         }
 
@@ -124,31 +173,93 @@ namespace Whiteboard.View
         private void EllipseBtn_Click(object sender, RoutedEventArgs e)
         {
             SetDrawingTool(DrawingTool.Ellipse);
+            
+            isWriting = false;
+            isErasing = false;
         }
 
         private void RectangleBtn_Click(object sender, RoutedEventArgs e)
         {
             SetDrawingTool(DrawingTool.Rectangle);
+            
+            isWriting = false;
+            isErasing = false;
         }
 
         private void LineBtn_Click(object sender, RoutedEventArgs e)
         {
             SetDrawingTool(DrawingTool.Line);
+            
+            isWriting = false;
+            isErasing = false;
         }
 
         private void EraserBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetDrawingTool(DrawingTool.Eraser);
+            SetDrawingTool(DrawingTool.None);
+            isWriting = false;
+            isErasing = true;
         }
 
         private void PencilBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetDrawingTool(DrawingTool.Pen);
+            SetDrawingTool(DrawingTool.None);
+            isWriting = true;
+            isErasing = false;
         }
 
-        private void FillBtn_Click(object sender, RoutedEventArgs e)
+        private void ColorPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string colorName = ((ComboBoxItem)ColorPicker.SelectedItem).Content.ToString();
+            
+            switch (colorName)
+            {
+                case "Red":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Red);
+                    currentColor = Brushes.Red;
+                    pen = Brushes.Red;
+                    break;
+                case "Green":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Green);
+                    currentColor = Brushes.Green;
+                    pen = Brushes.Green;
+                    break;
+                case "Blue":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Blue);
+                    currentColor = Brushes.Blue;
+                    pen = Brushes.Blue;
+                    break;
+                case "Black":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Black);
+                    currentColor = Brushes.Black;
+                    pen = Brushes.Black;
+                    break;
+                case "Gray":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Gray);
+                    currentColor = Brushes.Gray;
+                    pen = Brushes.Gray;
+                    break;
+                case "Yellow":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Yellow);
+                    currentColor = Brushes.Yellow;
+                    pen = Brushes.Yellow;
+                    break;
+                case "Orange":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Orange);
+                    currentColor = Brushes.Orange;
+                    pen = Brushes.Orange;
+                    break;
+                case "Purple":
+                    ColorBtn.Background = new SolidColorBrush(Colors.Purple);
+                    currentColor = Brushes.Purple;
+                    pen = Brushes.Purple;
+                    break;
+            }
+        }
 
+        private void ThicknessPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            penThickness = Convert.ToDouble(((ComboBoxItem)ThicknessPicker.SelectedItem).Content.ToString());
         }
     }
 }
