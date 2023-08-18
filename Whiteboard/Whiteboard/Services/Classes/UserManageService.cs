@@ -17,6 +17,7 @@ namespace Whiteboard.Services.Classes
     public class UserManageService : IUserManageService
     {
         public List<UserModel> Users { get; set; } = new();
+        public UserModel CurrentUser { get; set; }
 
         private readonly ISerializeService _serializeService;
         private readonly IMyNavigationService _navigationService;
@@ -125,6 +126,16 @@ namespace Whiteboard.Services.Classes
             }
 
             return false;
+        }
+
+        public void SetCurrentUser(UserModel user)
+        {
+            CurrentUser = user;
+        }
+
+        public UserModel GetCurrentUser()
+        {
+            return CurrentUser;
         }
     }
 }

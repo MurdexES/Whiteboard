@@ -37,6 +37,7 @@ namespace Whiteboard
             Container.RegisterSingleton<ISerializeService, SerializeService>();
             Container.RegisterSingleton<IMyNavigationService, MyNavigationService>();
             Container.RegisterSingleton<IUserManageService, UserManageService>();
+            Container.RegisterSingleton<IProjectManageService, ProjectManageService>();
 
             Container.RegisterSingleton<MainViewModel>();
             Container.RegisterSingleton<LoginViewModel>();

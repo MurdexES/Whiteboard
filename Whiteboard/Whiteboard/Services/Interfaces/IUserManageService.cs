@@ -14,5 +14,7 @@ namespace Whiteboard.Services.Interfaces
         public bool CheckExists(UserModel user);
         public UserModel GetUser(string mail, string password);
         public bool CheckInputs(UserModel user, string confirm);
+        public void SetCurrentUser(UserModel user);
+        public UserModel GetCurrentUser();
     }
 }

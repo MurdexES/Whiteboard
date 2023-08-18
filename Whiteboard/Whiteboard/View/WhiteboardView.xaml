@@ -360,7 +360,7 @@
                      HorizontalAlignment="Center"
                      VerticalAlignment="Center"
                      Width="300"
-                     Margin="400 4 4 4"
+                     Margin="600 4 4 4"
                      FontSize="18"
                      Style="{DynamicResource TextBoxStyle}"/>
         </StackPanel>

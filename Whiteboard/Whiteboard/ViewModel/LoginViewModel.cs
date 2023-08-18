@@ -36,6 +36,8 @@ namespace Whiteboard.ViewModel
                  {
                      var password = param as PasswordBox;
                      var user = _userManageService.GetUser(Email, password.Password);
+                     
+                     _userManageService.SetCurrentUser(user);
 
                      using FileStream fs = new("remember.json", FileMode.OpenOrCreate, FileAccess.Write);
                      using StreamWriter sw = new StreamWriter(fs);
