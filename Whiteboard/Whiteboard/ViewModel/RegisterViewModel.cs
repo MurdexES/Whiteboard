@@ -47,8 +47,6 @@ namespace Whiteboard.ViewModel
 
                     User.Password = password.Password.ToString();
                     _userService.Register(User, confirm.Password.ToString());
-                    
-                    _userService.SetCurrentUser(User);
                 }
             });
         }

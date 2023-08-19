@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using SimpleInjector;
+using SimpleInjector.Lifestyles;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
+using Whiteboard.Context;
 using Whiteboard.Services.Classes;
 using Whiteboard.Services.Interfaces;
 using Whiteboard.View;
@@ -23,6 +25,7 @@ namespace Whiteboard
     public partial class App : Application
     {
         public static Container Container { get; set; } = new();
+
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -44,6 +47,10 @@ namespace Whiteboard
             Container.RegisterSingleton<RegisterViewModel>();
             Container.RegisterSingleton<HomeViewModel>();
             Container.RegisterSingleton<WhiteboardViewModel>();
+
+
+            Container.RegisterSingleton<WhiteboardDbContext>();
+            
         }
 
         private void MainStartup()

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,14 +11,10 @@ namespace Whiteboard.Model
 {
     public class SketchModel
     {
-        public SketchModel(Image image, DateTime dateTime, string name)
-        {
-            Project = image;
-            DateCreated = dateTime;
-            ProjectName = name;
-        }
+        [Key]
+        public int Id { get; set; }
 
-        public Image Project { get; set; } 
+        public string ProjectLink { get; set; } 
         public DateTime DateCreated { get; set; }
         public string ProjectName { get; set; }
     }

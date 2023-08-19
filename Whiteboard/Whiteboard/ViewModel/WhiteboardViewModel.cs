@@ -89,11 +89,16 @@ namespace Whiteboard.ViewModel
             });
         }
 
-        public RelayCommand PrintCommand
+        public RelayCommand<Canvas> PrintCommand
         {
-            get => new(() =>
+            get => new(canvas =>
             {
-
+                PrintDialog printDialog = new();
+                
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(canvas, "Canvas Print");
+                }
             });
         }
     }

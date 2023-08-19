@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using Whiteboard.Context;
 using Whiteboard.Model;
 using Whiteboard.Services.Interfaces;
 
@@ -16,80 +17,50 @@ namespace Whiteboard.Services.Classes
 {
     public class UserManageService : IUserManageService
     {
-        public List<UserModel> Users { get; set; } = new();
         public UserModel CurrentUser { get; set; }
 
         private readonly ISerializeService _serializeService;
         private readonly IMyNavigationService _navigationService;
         private readonly IMessenger _messenger;
 
-        public UserManageService(ISerializeService serializeService, IMyNavigationService navigationService, IMessenger messenger)
+        private readonly WhiteboardDbContext _context;
+
+        public UserManageService(ISerializeService serializeService, IMyNavigationService navigationService, IMessenger messenger, WhiteboardDbContext context)
         {
             _serializeService = serializeService;
             _navigationService = navigationService;
             _messenger = messenger;
+            _context = context;
         }
 
         public void Authorize(UserModel user)
         {
-            using FileStream fs = new("users.json", FileMode.OpenOrCreate);
-            using StreamReader sr = new(fs);
-            if (sr.ReadToEnd() != string.Empty)
-            {
-                Users = _serializeService.Deserialize<List<UserModel>>(sr.ReadToEnd());
-            }
-            var result = Users.Find(x => x.Email == user.Email && x.Password == user.Password);
-
+            var result = _context.Users.FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
         }
 
         public void Register(UserModel user, string confirm)
         {
             if (!CheckExists(user) && CheckInputs(user, confirm))
             {
-                using FileStream fs = new("users.json", FileMode.OpenOrCreate, FileAccess.Write);
-                using StreamWriter sw = new(fs);
-
-                Users.Add(user);
-
-                sw.Write(JsonSerializer.Serialize(Users));
+                _context.Users.Add(user);
+                _context.SaveChanges();
+                
+                SetCurrentUser(user);
             }
             else if (CheckExists(user))
             {
                 MessageBox.Show("This mail is already used!");
             }
-
         }
 
         public bool CheckExists(UserModel user)
         {
-            using FileStream fs = new("users.json", FileMode.OpenOrCreate, FileAccess.Read);
-            using StreamReader sr = new(fs);
-
-            if (sr.ReadToEnd() != string.Empty)
-            {
-                fs.Position = 0;
-                Users = _serializeService.Deserialize<List<UserModel>>(sr.ReadToEnd());
-            }
-
-            UserModel res = Users.Find(x => x.Email == user.Email);
-
-            return res != null;
+            return _context.Users.Any(x => x.Email == user.Email);
         }
 
         public UserModel GetUser(string mail, string password)
         {
-            using FileStream fs = new("users.json", FileMode.OpenOrCreate, FileAccess.Read);
-            using StreamReader sr = new(fs);
-
-            if (sr.ReadToEnd() != string.Empty)
-            {
-                fs.Position = 0;
-                Users = _serializeService.Deserialize<List<UserModel>>(sr.ReadToEnd());
-            }
-
-            UserModel result = Users.Find(x => x.Email == mail);
-
-            return result;
+            return _context.Users.FirstOrDefault(x => x.Email == mail);
         }
 
         public bool CheckInputs(UserModel user, string confirm)

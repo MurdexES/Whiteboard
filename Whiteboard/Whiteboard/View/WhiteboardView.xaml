@@ -326,7 +326,8 @@
                           Height="55"
                           Width="120"
                           Style="{StaticResource Services_Sub_MenuItem}"
-                          Command="{Binding ExportCommand}">
+                          Command="{Binding ExportCommand}"
+                          CommandParameter="{Binding ElementName=Pic}">
                         <MenuItem.Icon>
                             <Image Source="Assets\Menu\open-box.png" Stretch="Uniform"/>
                         </MenuItem.Icon>
@@ -346,7 +347,8 @@
                           Height="55"
                           Width="120"
                           Style="{StaticResource Services_Sub_MenuItem}"
-                          Command="{Binding PrintCommand}">
+                          Command="{Binding PrintCommand}"
+                          CommandParameter="{Binding ElementName=Pic}">
                         <MenuItem.Icon>
                             <Image Source="Assets\Menu\printer.png" Stretch="Uniform"/>
                         </MenuItem.Icon>
@@ -419,7 +421,7 @@
         </Border>
 
         <Canvas x:Name="Pic" Grid.Row="2" MouseDown="Pic_MouseDown" MouseMove="Pic_MouseMove" MouseUp="Pic_MouseUp" Background="White">
-
+            
         </Canvas>
 
     </Grid>

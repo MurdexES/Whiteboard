@@ -95,3 +95,10 @@ Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Asset
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\open-box.png
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\open-folder.png
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\Menu\printer.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\View\Assets\add.png
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.Json.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll

@@ -8,9 +8,11 @@ namespace Whiteboard.Model
 {
     public class UserModel
     {
-        public string Username { get; set; } = "Murdex";
+        public int Id { get; set; }
+
+        public string Username { get; set; }
         public string Password { get; set; }
         public string Confirmation { get; set; }
-        public string Email { get; set; } = "morujov48@gmail.com";
+        public string Email { get; set; }
     }
 }
