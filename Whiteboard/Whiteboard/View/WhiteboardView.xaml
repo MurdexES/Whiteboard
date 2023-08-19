@@ -306,7 +306,8 @@
                           Height="55"
                           Width="120"
                           Style="{StaticResource Services_Sub_MenuItem}"
-                          Command="{Binding OpenCommand}">
+                          Command="{Binding OpenCommand}"
+                          CommandParameter="{Binding ElementName=Pic}">
                         <MenuItem.Icon>
                             <Image Source="Assets\Menu\open-folder.png" Stretch="Uniform"/>
                         </MenuItem.Icon>

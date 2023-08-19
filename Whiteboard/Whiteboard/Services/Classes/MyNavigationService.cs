@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Whiteboard.Services.Interfaces;
 using Whiteboard.Services.Messages;
+using Whiteboard.Model;
 
 namespace Whiteboard.Services.Classes
 {
@@ -33,6 +34,14 @@ namespace Whiteboard.Services.Classes
                     Data = data
                 });
             }
+        }
+
+        public void NavigateWarning<T>(bool warning) where T : ViewModelBase
+        {
+            _messenger.Send(new DataMessages()
+            {
+                Data = warning
+            });
         }
     }
 }

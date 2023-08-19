@@ -44,7 +44,7 @@ namespace Whiteboard.ViewModel
 
                      sw.Write(JsonSerializer.Serialize<bool>(IsCheckedKey));
 
-                     _myNavigationSevice.NavigateTo<HomeViewModel>(user);
+                     _myNavigationSevice.NavigateTo<HomeViewModel>();
 
                      MessageBox.Show($"{user.Email} logged in");
                  }

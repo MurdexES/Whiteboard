@@ -11,6 +11,8 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using Whiteboard.Services.Interfaces;
+using Whiteboard.Model;
+using System.Windows;
 
 namespace Whiteboard.ViewModel
 {
@@ -18,20 +20,32 @@ namespace Whiteboard.ViewModel
     {
         private readonly IMyNavigationService _myNavigationService;
         private readonly IUserManageService _userManageService;
+        private readonly IProjectManageService _projectManageService;
 
         public string ProjectName { get; set; } = string.Empty;
 
-        public WhiteboardViewModel(IMyNavigationService myNavigationService, IUserManageService userManageService)
+        public WhiteboardViewModel(IMyNavigationService myNavigationService, IUserManageService userManageService, IProjectManageService projectManageService)
         {
             _myNavigationService = myNavigationService;
             _userManageService = userManageService;
+            _projectManageService = projectManageService;
         }
 
-        public RelayCommand OpenCommand
+        public RelayCommand<Canvas> OpenCommand
         {
-            get => new(() =>
+            get => new(canvas =>
             {
-                _myNavigationService.NavigateTo<HomeViewModel>();
+                if(ProjectName != string.Empty)
+                {
+                    _projectManageService.AddProject(canvas, ProjectName);
+
+                    _myNavigationService.NavigateWarning<HomeViewModel>(true);
+                    _myNavigationService.NavigateTo<HomeViewModel>();
+                }
+                else
+                {
+                    MessageBox.Show("You did not enter the project name!!!");
+                }
             });
         }
 

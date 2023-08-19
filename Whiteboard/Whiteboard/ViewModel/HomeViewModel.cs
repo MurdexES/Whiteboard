@@ -7,8 +7,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Whiteboard.Context;
 using Whiteboard.Model;
 using Whiteboard.Services.Interfaces;
+using Whiteboard.Services.Messages;
 
 namespace Whiteboard.ViewModel
 {
@@ -19,10 +21,23 @@ namespace Whiteboard.ViewModel
         private readonly IMessenger _messenger;
         private readonly IMyNavigationService _myNavigationService;
 
-        public HomeViewModel(IMessenger messenger, IMyNavigationService myNavigationService)
+        private readonly WhiteboardDbContext _context;
+
+        public void ReceiveDataMessage(DataMessages message)
+        {
+            if ((bool)message.Data) 
+            {
+                Projects = new ObservableCollection<SketchModel>(_context.Pictures);
+            }
+        }
+
+        public HomeViewModel(IMessenger messenger, IMyNavigationService myNavigationService, WhiteboardDbContext context)
         {
             _messenger = messenger;
             _myNavigationService = myNavigationService;
+            _context = context;
+
+            _messenger.Register<DataMessages>(this, ReceiveDataMessage);
         }
 
         public RelayCommand AddProjectCommand
