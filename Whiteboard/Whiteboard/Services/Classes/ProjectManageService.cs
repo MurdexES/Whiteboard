@@ -95,10 +95,5 @@ namespace Whiteboard.Services.Classes
                 }
             }
         }
-
-        public void Open(Canvas canvas)
-        {
-
-        }
     }
 }

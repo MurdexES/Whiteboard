@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace Whiteboard.ViewModel
     {
         private readonly IMessenger _messenger;
         private readonly IMyNavigationService _myNavigationSevice;
+        private readonly IUserManageService _userManageService;
         private ViewModelBase _currentViewModel;
 
         public ViewModelBase CurrentViewModel
@@ -56,7 +58,7 @@ namespace Whiteboard.ViewModel
             CurrentViewModel = App.Container.GetInstance(message.ViewModelType) as ViewModelBase;
         }
 
-        public MainViewModel(IMessenger messenger, IMyNavigationService myNavigationSevice) 
+        public MainViewModel(IMessenger messenger, IMyNavigationService myNavigationSevice, IUserManageService userManageService) 
         {
             if (IsRemember())
             {
@@ -71,6 +73,16 @@ namespace Whiteboard.ViewModel
             _messenger.Register<NavigationMessage>(this, ReceiveMessage);
 
             _myNavigationSevice = myNavigationSevice;
+            _userManageService = userManageService;
+        }
+
+        public RelayCommand LogOutCommand
+        {
+            get => new(() =>
+            {
+                _userManageService.SetCurrentUser(null);
+                _myNavigationSevice.NavigateTo<LoginViewModel>();
+            });
         }
     }
 }

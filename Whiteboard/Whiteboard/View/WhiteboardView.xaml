@@ -317,7 +317,8 @@
                           Height="55"
                           Width="120"
                           Style="{StaticResource Services_Sub_MenuItem}"
-                          Command="{Binding SaveCommand}">
+                          Command="{Binding SaveCommand}"
+                          CommandParameter="{Binding ElementName=Pic}">
                         <MenuItem.Icon>
                             <Image Source="Assets\Menu\download.png" Stretch="Uniform"/>
                         </MenuItem.Icon>
@@ -338,7 +339,8 @@
                           Height="55"
                           Width="120"
                           Style="{StaticResource Services_Sub_MenuItem}"
-                          Command="{Binding SendCommand}">
+                          Command="{Binding SendCommand}"
+                          CommandParameter="{Binding ElementName=Pic}">
                         <MenuItem.Icon>
                             <Image Source="Assets\Menu\email.png" Stretch="Uniform"/>
                         </MenuItem.Icon>
