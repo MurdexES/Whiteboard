@@ -12,7 +12,6 @@ namespace Whiteboard.Services.Interfaces
     {
         public void AddProject(Canvas canvas, string projectName);
         public void DeleteProject(SketchModel picture);
-        public void Open(Canvas canvas);
         public bool CheckProjectExist(string projectName);
     }
 }

@@ -66,7 +66,7 @@ namespace Whiteboard.ViewModel
             }
             else
             {
-                CurrentViewModel = App.Container.GetInstance<WhiteboardViewModel>();
+                CurrentViewModel = App.Container.GetInstance<LoginViewModel>();
             }
 
             _messenger = messenger;

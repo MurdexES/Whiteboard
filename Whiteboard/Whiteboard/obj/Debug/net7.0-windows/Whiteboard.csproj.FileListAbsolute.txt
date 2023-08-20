@@ -102,3 +102,10 @@ Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\BouncyCastle.Cryptography.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\MailKit.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\MimeKit.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\System.Security.Cryptography.Pkcs.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+Q:\Projects\Whiteboard\Whiteboard\Whiteboard\bin\Debug\net7.0-windows\appsettings.json

@@ -36,7 +36,8 @@ namespace Whiteboard.Context
 
             users.Property(x => x.Username).IsRequired();
             users.Property(x => x.Password).IsRequired();
-            
+            users.Property(x => x.Email).IsRequired();
+
             pictures.Property(x => x.ProjectName).IsRequired();
             pictures.Property(x => x.ProjectLink).IsRequired();
             pictures.Property(x => x.DateCreated).IsRequired();
