@@ -39,7 +39,7 @@ namespace Whiteboard.ViewModel
                      
                      _userManageService.SetCurrentUser(user);
 
-                     using FileStream fs = new("remember.json", FileMode.OpenOrCreate, FileAccess.Write);
+                     using FileStream fs = new("remember.json", FileMode.Create, FileAccess.Write);
                      using StreamWriter sw = new StreamWriter(fs);
 
                      sw.Write(JsonSerializer.Serialize<bool>(IsCheckedKey));
