@@ -41,7 +41,7 @@ namespace Whiteboard.Services.Classes
                 tmpPicture.DateCreated = DateTime.Now;
                 tmpPicture.ProjectName = projectName;
 
-                var renderBitmap = new RenderTargetBitmap((int)canvas.Width, (int)canvas.Height, 96, 96, PixelFormats.Default);
+                var renderBitmap = new RenderTargetBitmap((int)canvas.ActualWidth, (int)(canvas.ActualHeight + 150), 96, 96, PixelFormats.Default);
                 renderBitmap.Render(canvas);
 
                 BitmapSource canvasImage = renderBitmap;
