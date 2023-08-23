@@ -36,20 +36,14 @@ namespace Whiteboard.ViewModel
             using FileStream fs = new("remember.json", FileMode.OpenOrCreate, FileAccess.Read);
             using StreamReader sr = new StreamReader(fs);
 
-            if (sr.ReadToEnd() == string.Empty)
+            if (sr.ReadToEnd() != string.Empty)
             {
-                return false;
+                fs.Position = 0;
+                return JsonSerializer.Deserialize<bool>(sr.ReadToEnd());
             }
             else
             {
-                if (JsonSerializer.Deserialize<bool>(sr.ReadToEnd()) == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
         }
 
